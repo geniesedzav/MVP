@@ -1,0 +1,108 @@
+/* text Styles  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("./markup.css");
+:root {
+  /* Heading */
+  --heading-size_h1: var(--spacing-7);
+  --heading-size_h2: var(--spacing-6);
+  --heading-size_h3: var(--spacing-5);
+  --heading-size_h4: var(--spacing-4);
+  --heading-size_h5: var(--spacing-3);
+
+  --heading-line_h1: var(--spacing-8);
+  --heading-line_h2: var(--spacing-6);
+  --heading-line_h3: var(--spacing-5);
+  --heading-line_h4: var(--spacing-5);
+  --heading-line_h5: var(--spacing-5);
+
+  --heading-weight_h1: 700;
+  --heading-weight_h2: 700;
+  --heading-weight_h3: 700;
+  --heading-weight_h4: 700;
+  --heading-weight_h5: 700;
+
+  /* Body */
+  --body-size_l: 18;
+  --body-size_m: 16;
+  --body-size_s: 14;
+
+  --body-line_l: 28px;
+  --body-line_m: 24px;
+  --body-line_s: 20px;
+
+  /* Description*/
+  --description-size-l: 12;
+  --description-size-m: 11;
+  --description-size-s: 10;
+
+  --description-line-l: 12;
+  --description-line-m: 11;
+  --description-line-s: 10;
+}
+.heading-h1 {
+  font-size: var(--heading-size_h1);
+  font-weight: var(--heading-weight_h1);
+  line-height: var(--heading-line_h1);
+  font-family: "Montserrat";
+}
+.heading-h2 {
+  font-size: var(--heading-size_h2);
+  font-weight: var(--heading-weight_h2);
+  line-height: var(--heading-line_h2);
+  font-family: "Montserrat";
+}
+.heading-h3 {
+  font-size: var(--heading-size_h3);
+  font-weight: var(--heading-weight_h3);
+  line-height: var(--heading-line_h3);
+  font-family: "Montserrat";
+}
+.heading-h4 {
+  font-size: var(--heading-size_h4);
+  font-weight: var(--heading-weight_h4);
+  line-height: var(--heading-line_h4);
+  font-family: "Montserrat";
+}
+.heading-h5 {
+  font-size: var(--heading-size_h5);
+  font-weight: var(--heading-weight_h5);
+  line-height: var(--heading-line_h5);
+  font-family: "Montserrat";
+}
+.body-b1 {
+  font-size: var(--body-size_l);
+  font-weight: 400;
+  line-height: var(--body-line_l);
+  font-family: "Inter";
+}
+.body-b2 {
+  font-size: var(--body-size_m);
+  font-weight: 400;
+  line-height: var(--body-line_m);
+  font-family: "Inter";
+}
+.body-b3 {
+  font-size: var(--body-size_s);
+  font-weight: 400;
+  line-height: var(--body-line_s);
+  font-family: "Inter";
+}
+.description-d1 {
+  font-size: var(--description-size-l);
+  font-weight: 400;
+  line-height: var(--description-size-l);
+  font-family: "Inter";
+}
+.description-d2 {
+  font-size: var(--description-size-m);
+  font-weight: 400;
+  line-height: var(--description-size-m);
+  font-family: "Inter";
+}
+.description-d3 {
+  font-size: var(--description-size-s);
+  font-weight: 400;
+  line-height: var(--description-size-s);
+  font-family: "Inter";
+}

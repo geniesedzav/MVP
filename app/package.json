@@ -1,0 +1,29 @@
+{
+  "name": "platforma-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "preview:host": "vite preview --host",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
+    "axios": "^1.8.4",
+    "entities": "^6.0.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "concurrently": "^9.2.1",
+    "vite": "^6.2.0",
+    "vite-plugin-mkcert": "^1.17.8"
+  }
+}

@@ -1,0 +1,87 @@
+div#app-content {
+  background-color: var(--background-page-filled);
+  min-height: 100vh;
+  display: flex;
+}
+nav {
+  width: 256px;
+  box-sizing: border-box;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: white;
+}
+section.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-horizontal-7);
+  width: 100%;
+  margin-right: 24px;
+}
+header {
+  max-width: 100%;
+  padding: var(--padding-l);
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-surface1);
+}
+.filters {
+  display: flex;
+  gap: var(--gap-vertical-5);
+}
+
+header #btn {
+  flex-grow: 0;
+  flex-shrink: 1;
+  width: auto;
+}
+.teacher_result {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.result_list {
+  padding: var(--padding-l);
+  background-color: var(--background-surface1);
+  border-radius: 32px;
+}
+.main_info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-vertical-7);
+}
+.avatar_text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-vertical-2);
+}
+.card_subject {
+  padding: var(--padding-m);
+  background-color: var(--background-surface2);
+  border-radius: var(--border-radius-m);
+}
+.buttons {
+  display: flex;
+  gap: var(--gap-horizontal-3);
+  margin-top: 40px;
+}
+.buttons-nav {
+  display: flex;
+  gap: var(--gap-horizontal-3);
+}
+#search .input {
+  width: 360px !important;
+}
+.filters .select {
+  width: 300px;
+}
+#filter_button {
+  max-width: 240px;
+}

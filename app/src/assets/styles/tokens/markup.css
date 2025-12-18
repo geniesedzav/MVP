@@ -1,0 +1,53 @@
+:root {
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 32px;
+  --spacing-8: 40px;
+  --spacing-9: 48px;
+  --spacing-10: 56px;
+
+  /* Sizes */
+  --size-xs: var(--spacing-4);
+  --size-s: var(--spacing-5);
+  --size-m: var(--spacing-6);
+  --size-l: var(--spacing-7);
+  --size-xl: var(--spacing-9);
+  --size-xxl: var(--spacing-10);
+
+  /* Border Radius */
+  --border-radius-xs: var(--spacing-1);
+  --border-radius-s: var(--spacing-2);
+  --border-radius-m: var(--spacing-3);
+  --border-radius-l: var(--spacing-4);
+  --border-radius-xl: var(--spacing-6);
+  --border-radius-xxl: var(--spacing-7);
+
+  /* Padding */
+  --padding-xs: var(--spacing-1);
+  --padding-s: var(--spacing-2);
+  --padding-m: var(--spacing-4);
+  --padding-l: var(--spacing-6);
+  --padding-xl: var(--spacing-7);
+
+  /* Gaps */
+  --gap-horizontal-1: 0px;
+  --gap-horizontal-2: var(--spacing-1);
+  --gap-horizontal-3: var(--spacing-2);
+  --gap-horizontal-4: var(--spacing-3);
+  --gap-horizontal-5: var(--spacing-4);
+  --gap-horizontal-6: var(--spacing-5);
+  --gap-horizontal-7: var(--spacing-6);
+
+  --gap-vertical-1: 0px;
+  --gap-vertical-2: var(--spacing-1);
+  --gap-vertical-3: var(--spacing-2);
+  --gap-vertical-4: var(--spacing-3);
+  --gap-vertical-5: var(--spacing-4);
+  --gap-vertical-6: var(--spacing-5);
+  --gap-vertical-7: var(--spacing-6);
+}

@@ -1,0 +1,70 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-vertical-3);
+}
+
+.input_label {
+  color: var(--foreground-soft);
+}
+.input__field {
+  height: 56px;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-l);
+  padding-block: var(--padding-s);
+  padding-inline: var(--padding-m);
+  display: flex;
+  border: 2px solid var(--border-soft);
+  background-color: var(--background-surface1);
+  width: 100%;
+}
+.input__field::placeholder {
+  color: var(--foreground-muted);
+}
+
+/* ========== State ========== */
+
+.input__field:hover:not(:disabled):not(.invalid) {
+  border: solid 2px var(--accent-hover);
+}
+.input__field:focus:not(:disabled):not(.invalid) {
+  border: 2px solid var(--accent-active);
+  outline: none;
+}
+.input__field:disabled {
+  background-color: var(--background-surface2);
+  color: var(--foreground-disabled);
+}
+.input_label.invalid {
+  border-color: var(--error-default);
+  background-color: var(--error-container-default);
+  animation: shake 0.25s ease-in-out;
+}
+
+/* ========== Required marker ========== */
+
+.input__label--required::after {
+  content: "*";
+  color: var(--error-default);
+}
+
+/* ========== Icon ========== */
+.input__icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-icon-default, #9ca3af);
+  pointer-events: none;
+}
+.input__field.has-icon {
+  padding-right: 36px;
+}
+
+/* ========== Hint / Message ========== */
+.input__message {
+  color: var(--foreground-soft);
+}
+.input__message.error {
+  color: var(--error-default);
+}

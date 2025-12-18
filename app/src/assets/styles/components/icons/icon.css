@@ -1,0 +1,29 @@
+.icon {
+    fill: var(--icon-fill_black_icon);
+  }
+  
+  .icon:hover {
+    fill: var(--icon-fill_blue_icon);
+  }
+  .icon-red {
+    fill: var(--icon-fill_black_icon);
+  }
+  .icon-red:hover {
+    fill: var(--icon-background_red_icon);
+  }
+  .icon-ellipse {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    fill: var(--icon-fill_blue_icon);
+  }
+  .icon-ellipse-background {
+    fill: var(--icon-fill_blue_icon);
+    background: var(--other-background_light-blue_block);
+  }
+  

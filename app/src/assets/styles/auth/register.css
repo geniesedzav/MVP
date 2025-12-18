@@ -1,0 +1,63 @@
+div#app-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../images/common/auth.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+form {
+  width: 453px;
+  box-sizing: border-box;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+  padding: var(--padding-xl, 32px);
+  border-radius: var(--border-radius-l, 16px);
+  background: var(--background-surface1, rgba(255, 255, 255, 1));
+}
+div.contant {
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+}
+.input,
+.input__field,
+.btn {
+  width: 100%;
+}
+div.content-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+div.button-info {
+  align-self: stretch;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-vertical-3);
+}
+.body-b3 {
+  text-align: center;
+}
+.body-b3 a {
+  color: var(--accent-default);
+  font-weight: bold;
+  text-decoration: none;
+}
+.input .body-b3 {
+  text-align: start;
+}

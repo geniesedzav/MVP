@@ -1,0 +1,24 @@
+{
+  "name": "Platforma Fullstack (Vue + Express)",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "api",
+  "workspaceFolder": "/workspace",
+
+  "forwardPorts": [8080, 8081, 5050],
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "Prisma.prisma",
+        "Vue.volar"
+      ]
+    }
+  },
+
+  "remoteUser": "root"
+}

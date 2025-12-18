@@ -1,0 +1,104 @@
+/* Размеры */
+.btn-s {
+  padding-inline: var(--padding-m);
+  padding-block: var(--padding-s);
+}
+.btn-m {
+  padding-inline: var(--border-radius-xl);
+  padding-block: var(--padding-s);
+}
+.btn-l {
+  padding-inline: var(--padding-xl);
+  padding-block: var(--padding-s);
+}
+.btn-xl {
+  padding-inline: var(--padding-xl);
+  padding-block: var(--padding-m);
+}
+
+/* Состояния */
+.btn-default {
+  color: var(--accent-on-accent);
+  background-color: var(--accent-default);
+}
+.btn-hover {
+  color: var(--accent-on-accent);
+  background-color: var(--accent-hover);
+}
+.btn-focus {
+  border: 2px solid var(--accent-default);
+  color: var(--accent-container-hover);
+  background-color: var(--accent-default);
+}
+.btn-active {
+  color: var(--accent-on-accent);
+  background-color: var(--accent-active);
+}
+.btn-disabled {
+  color: var(--accent-muted);
+  background-color: var(--accent-container-default);
+}
+.btn-loading {
+  color: var(--accent-muted);
+  background-color: var(--accent-default);
+}
+
+/* Variant */
+.btn-primary.accent {
+  color: var(--accent-on-accent);
+  background-color: var(--accent-default);
+}
+.btn-primary.neutral {
+  color: var(--accent-on-accent);
+  background-color: var(--neutral-default);
+}
+.btn-secondary.accent {
+  color: var(--accent-default);
+  border: 2px solid var(--accent-default);
+}
+.btn-secondary.neutral {
+  color: var(--neutral-default);
+  border: 2px solid var(--neutral-default);
+}
+
+/* button */
+.btn {
+  gap: var(--gap-horizontal-3);
+  border-radius: var(--border-radius-s);
+}
+
+.button {
+  display: inline-flex;
+  width: 100%;
+}
+
+.button__control {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: 0.2s ease;
+}
+
+/* Новый функционал, повторяющий input */
+/* Hover */
+.button__control:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+  color: var(--accent-on-accent);
+}
+
+/* Focus */
+.button__control:focus:not(:disabled) {
+  outline: none;
+  border: 2px solid var(--accent-active);
+}
+
+/* Active */
+.button__control:active:not(:disabled) {
+  background-color: var(--accent-active);
+}
+
+/* Disabled */
+.button__control:disabled {
+  cursor: not-allowed;
+}

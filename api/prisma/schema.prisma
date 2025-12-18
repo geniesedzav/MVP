@@ -1,0 +1,215 @@
+// schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  id    Int    @id @default(autoincrement())
+  title String @db.VarChar(40)
+  users User[]
+
+  @@unique([title])
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  login         String         @unique @db.VarChar(50)
+  password_hash String         @db.Text
+  date          DateTime       @default(now()) @db.Date
+  role_id       Int
+  role          Role           @relation(fields: [role_id], references: [id])
+  students      Student[]
+  teachers      Teacher[]
+  organizations Organization[]
+
+  @@map("users")
+}
+
+model Organization {
+  id                    Int                   @id @default(autoincrement())
+  code                  String                @unique @db.VarChar(20)
+  name                  String                @db.VarChar(25)
+  description           String                @db.VarChar(40)
+  owner_id              Int
+  owner                 User                  @relation(fields: [owner_id], references: [id])
+  created_at            DateTime              @default(now()) @db.Date
+  groups                Group[]
+  organization_teachers OrganizationTeacher[]
+  subjects              Subject[]
+
+  @@map("organizations")
+}
+
+model Student {
+  id             Int            @id @default(autoincrement())
+  name           String         @db.VarChar(25)
+  last_name      String         @db.VarChar(40)
+  patronymic     String         @db.VarChar(40)
+  user_id        Int            @unique
+  user           User           @relation(fields: [user_id], references: [id])
+  student_groups StudentGroup[]
+  grades         Grade[]
+
+  @@map("students")
+}
+
+model Teacher {
+  id                     Int                    @id @default(autoincrement())
+  user_id                Int
+  user                   User                   @relation(fields: [user_id], references: [id])
+  name                   String                 @db.VarChar(25)
+  last_name              String                 @db.VarChar(40)
+  patronymic             String                 @db.VarChar(40)
+  teacher_subjects       TeacherSubject[]
+  teacher_groups_subject TeacherGroupsSubject[]
+  test_tasks             TestTask[]
+  grades                 Grade[]
+
+  organization_teachers OrganizationTeacher[]
+
+  @@map("teachers")
+}
+
+model Group {
+  id                     Int                    @id @default(autoincrement())
+  title                  String                 @db.VarChar(6)
+  course_code            String?                @db.VarChar(16)
+  organization_id        Int
+  organization           Organization           @relation(fields: [organization_id], references: [id])
+  student_groups         StudentGroup[]
+  teacher_groups_subject TeacherGroupsSubject[]
+  test_assigned_groups   TestAssignedGroup[]
+
+  @@map("groups")
+}
+
+model StudentGroup {
+  id         Int     @id @default(autoincrement())
+  student_id Int
+  group_id   Int
+  student    Student @relation(fields: [student_id], references: [id])
+  group      Group   @relation(fields: [group_id], references: [id])
+
+  @@unique([student_id, group_id])
+  @@map("student_groups")
+}
+
+model Subject {
+  id                     Int                    @id @default(autoincrement())
+  title                  String                 @db.VarChar(25)
+  id_organization        Int
+  organization           Organization           @relation(fields: [id_organization], references: [id])
+  teacher_subjects       TeacherSubject[]
+  teacher_groups_subject TeacherGroupsSubject[]
+
+  @@unique([title, id_organization])
+  @@map("subjects")
+}
+
+model TeacherSubject {
+  id         Int     @id @default(autoincrement())
+  teacher_id Int
+  subject_id Int
+  teacher    Teacher @relation(fields: [teacher_id], references: [id])
+  subject    Subject @relation(fields: [subject_id], references: [id])
+
+  @@unique([teacher_id, subject_id])
+  @@map("teacher_subjects")
+}
+
+model TeacherGroupsSubject {
+  id         Int     @id @default(autoincrement())
+  group_id   Int
+  teacher_id Int
+  subject_id Int
+  group      Group   @relation(fields: [group_id], references: [id])
+  teacher    Teacher @relation(fields: [teacher_id], references: [id])
+  subject    Subject @relation(fields: [subject_id], references: [id])
+
+  @@unique([group_id, teacher_id, subject_id])
+  @@map("teacher_groups_subject")
+}
+
+model TestTask {
+  id                   Int                 @id @default(autoincrement())
+  teacher_id           Int
+  title                String              @db.VarChar(100)
+  description          String?             @db.VarChar(255)
+  img                  String?             @db.VarChar(100)
+  beginning_date       DateTime?           @db.Date
+  end_date             DateTime?           @db.Date
+  time                 Int
+  teacher              Teacher             @relation(fields: [teacher_id], references: [id])
+  questions            Question[]
+  test_assigned_groups TestAssignedGroup[]
+  grades               Grade[]
+
+  @@map("test_tasks")
+}
+
+model TestAssignedGroup {
+  id       Int      @id @default(autoincrement())
+  test_id  Int
+  group_id Int
+  test     TestTask @relation(fields: [test_id], references: [id])
+  group    Group    @relation(fields: [group_id], references: [id])
+
+  @@unique([test_id, group_id])
+  @@map("test_assigned_groups")
+}
+
+model Question {
+  id            Int      @id @default(autoincrement())
+  description   String   @db.VarChar(255)
+  img           String?  @db.VarChar(100)
+  test_task_id  Int
+  question_type String   @default("single_choice") @db.VarChar(20)
+  order_index   Int      @default(0)
+  complexity    String?  @default("medium") @db.VarChar(10)
+  test_task     TestTask @relation(fields: [test_task_id], references: [id])
+  answers       Answer[]
+
+  @@map("questions")
+}
+
+model Answer {
+  id          Int      @id @default(autoincrement())
+  question_id Int
+  text        String   @db.VarChar(255)
+  is_correct  Boolean  @default(false)
+  order_index Int      @default(0)
+  question    Question @relation(fields: [question_id], references: [id])
+
+  @@map("answers")
+}
+
+model Grade {
+  id         Int       @id @default(autoincrement())
+  student_id Int
+  teacher_id Int
+  date       DateTime  @default(now()) @db.Date
+  grade      Int
+  test_id    Int?
+  student    Student   @relation(fields: [student_id], references: [id])
+  teacher    Teacher   @relation(fields: [teacher_id], references: [id])
+  test_task  TestTask? @relation(fields: [test_id], references: [id])
+
+  @@map("grades")
+}
+
+model OrganizationTeacher {
+  id              Int @id @default(autoincrement())
+  teacher_id      Int
+  organization_id Int
+
+  teacher      Teacher      @relation(fields: [teacher_id], references: [id])
+  organization Organization @relation(fields: [organization_id], references: [id])
+
+  @@unique([teacher_id, organization_id])
+  @@map("organizationTeachers")
+}

@@ -1,0 +1,13 @@
+.tab {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.tab #line{
+    stroke-width: 1px;
+    stroke: var(--text-background_light-gray_text);
+}
+.tab:hover > *{
+    stroke: var(--icon-fill_blue_icon);
+    color: var(--text-background_blue_text);
+}

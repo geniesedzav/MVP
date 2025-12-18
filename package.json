@@ -1,0 +1,41 @@
+{
+  "name": "platforma",
+  "version": "1.0.0",
+  "description": "Educational Platform - Client + API",
+  "type": "module",
+  "scripts": {
+    "install:all": "npm install && cd api && npm install && cd ../app && npm install",
+    "dev": "npm run dev:api & npm run dev:app",
+    "dev:api": "cd api && npm run dev",
+    "dev:app": "cd app && npm run dev",
+    "dev:codespaces": "CODESPACES=true npm run dev",
+    "build": "npm run build:api && npm run build:app",
+    "build:api": "cd api && npm run build",
+    "build:app": "cd app && npm run build",
+    "start": "NODE_ENV=production npm run start:api",
+    "start:api": "cd api && npm start",
+    "start:app": "cd app && npm run preview",
+    "db:migrate": "cd api && npx prisma migrate dev",
+    "db:studio": "cd api && npx prisma studio",
+    "db:generate": "cd api && npx prisma generate",
+    "clean": "npm run clean:node_modules && npm run clean:build",
+    "clean:node_modules": "rm -rf node_modules api/node_modules app/node_modules",
+    "clean:build": "rm -rf api/dist app/dist"
+  },
+  "keywords": [
+    "education",
+    "platform",
+    "vue",
+    "express",
+    "postgresql"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "vite-plugin-mkcert": "^1.17.8"
+  }
+}

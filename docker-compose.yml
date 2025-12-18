@@ -1,0 +1,62 @@
+networks:
+  platforma_net:
+
+services:
+  app:
+    build: ./app
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./app:/workspace/app
+    depends_on:
+      - api
+    networks:
+      - platforma_net
+
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./api:/workspace/api
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: devtedsuser
+      DB_PASSWORD: devtedspass
+      DB_NAME: demodb
+    depends_on:
+      - db
+    networks:
+      - platforma_net
+
+  db:
+    image: postgres:12.19
+    restart: always
+    environment:
+      POSTGRES_USER: devtedsuser
+      POSTGRES_PASSWORD: devtedspass
+      POSTGRES_DB: demodb
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    networks:
+      - platforma_net
+
+  pgadmin:
+    image: dpage/pgadmin4:8.9
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: devteds@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: devteds
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - db
+    networks:
+      - platforma_net
+
+volumes:
+  pg-data:
+  pgadmin-data:

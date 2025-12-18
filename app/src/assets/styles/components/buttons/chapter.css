@@ -1,0 +1,22 @@
+.chapter {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    gap: 7px;
+    border-radius: 4px;
+  }
+  .chapter:hover {
+    background: var(--card-background_gray_fill);
+  }
+  .chapter:hover > svg path#fill {
+    fill: var(--icon-background_blue_icon);
+  }
+  .chapter:hover > svg path#stroke {
+    fill: var(--icon-fill_blue_icon);
+  }
+  
+  .chapter:active {
+    color: var(--text-background_blue_text);
+    background: var(--card-background_gray_fill);
+  }
+  

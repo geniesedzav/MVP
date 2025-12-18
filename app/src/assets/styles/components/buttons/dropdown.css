@@ -1,0 +1,83 @@
+/* Обёртка поля */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-vertical-2);
+}
+
+/* Лейбл */
+.field__label {
+    color: var(--foreground-soft);
+}
+
+.field__required {
+    color: var(--error-default);
+}
+
+/* Контейнер селекта */
+.select {
+    position: relative;
+    width: 100%;
+}
+
+/* Сама тулка select */
+.select__control {
+    width: 100%;
+    height: 56px;                    /* твой фиксированный размер */
+    box-sizing: border-box;
+    padding: var(--padding-s) calc(var(--padding-l) + 24px)
+    var(--padding-s) var(--padding-m);
+    border-radius: var(--border-radius-l);
+    border: 2px solid var(--border-soft);
+    background: var(--background-surface1);
+    color: var(--foreground-default);
+
+    font-family: "Inter", system-ui;
+    font-size: var(--body-size_m);
+
+    appearance: none;                /* убираем стандартную стрелку */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Стрелка */
+.select__icon {
+    position: absolute;
+    right: var(--padding-m);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: var(--neutral-muted);
+}
+
+/* Состояние :focus */
+.select__control:focus {
+    outline: none;
+    border-color: var(--accent-default);
+    box-shadow: 0 0 0 1px var(--accent-default);
+}
+
+/* Disabled */
+.select__control:disabled {
+    background: var(--background-disabled);
+    color: var(--foreground-disabled);
+    border-color: var(--border-muted);
+}
+
+/* Ошибка (через модификатор контейнера) */
+.select--error .select__control {
+    border-color: var(--error-default);
+    background: var(--error-container-default);
+}
+
+/* Сообщение об ошибке */
+.field__message {
+    margin-top: 4px;
+    font-size: var(--description-size-m);
+    color: var(--foreground-muted);
+}
+
+.field__message--error {
+    color: var(--error-default);
+}
