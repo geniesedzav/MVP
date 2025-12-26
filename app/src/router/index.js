@@ -22,6 +22,12 @@ const routes = [
     component: () => import("@/modules/teacher/index.vue"),
     meta: { role: 3 },
   },
+  {
+    path: "/journal",
+    name: "journal",
+    component: () => import("@/modules/teacher/journal.vue"),
+    meta: { role: 3 },
+  },
 
   //админ
   {

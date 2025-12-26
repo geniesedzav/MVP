@@ -8,7 +8,7 @@
   --heading-size_h2: var(--spacing-6);
   --heading-size_h3: var(--spacing-5);
   --heading-size_h4: var(--spacing-4);
-  --heading-size_h5: var(--spacing-3);
+  --heading-size_h5: 14px;
 
   --heading-line_h1: var(--spacing-8);
   --heading-line_h2: var(--spacing-6);
@@ -67,7 +67,6 @@
 .heading-h5 {
   font-size: var(--heading-size_h5);
   font-weight: var(--heading-weight_h5);
-  line-height: var(--heading-line_h5);
   font-family: "Montserrat";
 }
 .body-b1 {
@@ -91,7 +90,6 @@
 .description-d1 {
   font-size: var(--description-size-l);
   font-weight: 400;
-  line-height: var(--description-size-l);
   font-family: "Inter";
 }
 .description-d2 {
@@ -105,4 +103,12 @@
   font-weight: 400;
   line-height: var(--description-size-s);
   font-family: "Inter";
+}
+.link-a {
+  text-decoration: none;
+  color: var(--accent-default);
+  transition: 0.15s;
+}
+.link-a:hover {
+  color: var(--accent-hover);
 }

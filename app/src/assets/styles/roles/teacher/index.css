@@ -1,0 +1,121 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+#teacher-layout {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-page-filled);
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 300px;
+  background-color: var(--background-surface1);
+  padding: var(--padding-m);
+}
+nav .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-vertical-2);
+  margin-top: 40px;
+}
+.item {
+  display: flex;
+  gap: var(--gap-horizontal-3);
+  padding: var(--padding-s);
+  border-radius: var(--border-radius-s);
+  transition: 0.15;
+}
+.item:hover {
+  background-color: var(--background-surface2);
+}
+.position {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  display: flex;
+  gap: var(--gap-horizontal-4);
+  width: 1200px;
+  height: 84%;
+}
+.widget-organization {
+  box-sizing: border-box;
+  max-width: 320px;
+  padding: var(--padding-m);
+  background-color: var(--background-surface1);
+  gap: var(--gap-vertical-5);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-s);
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-vertical-3);
+}
+.tablet {
+  background-color: var(--background-surface3);
+  padding: var(--padding-s);
+  border-radius: var(--border-radius-xs);
+}
+.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-horizontal-6);
+}
+.horizantal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-horizontal-6);
+}
+.card-info {
+  border-radius: var(--border-radius-s);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-vertical-5);
+  padding: var(--padding-m);
+  background-color: var(--background-surface1);
+}
+.wighet-tests {
+  border-radius: var(--border-radius-s);
+  padding: var(--padding-m);
+  background-color: var(--background-surface1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-vertical-6);
+}
+.wighet-tests .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.cell {
+  padding: var(--padding-s);
+  text-align: start;
+}
+span,
+td,
+th,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--foreground-default);
+}
+thead tr th {
+  color: var(--foreground-default);
+}
