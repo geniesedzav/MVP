@@ -46,15 +46,15 @@ router.beforeEach((to, from, next) => {
   const role = Number(localStorage.getItem("role_id"));
   const userid = Number(localStorage.getItem("userid"));
 
-  // Если нет токена — доступ только на login
-  if (!token && to.path !== "/login") {
-    return next("/login");
-  }
+  // // Если нет токена — доступ только на login
+  // if (!token && to.path !== "/login") {
+  //   return next("/login");
+  // }
 
-  // 1. Проверка роли (meta.role)
-  if (to.meta.role && to.meta.role !== role) {
-    return next("/login");
-  }
+  // // 1. Проверка роли (meta.role)
+  // if (to.meta.role && to.meta.role !== role) {
+  //   return next("/login");
+  // }
 
   // 2. Студент → может ходить только по путям /student/:id/*
   if (role === 1 && to.path.startsWith("/student")) {

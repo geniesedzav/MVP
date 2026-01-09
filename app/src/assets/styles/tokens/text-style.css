@@ -23,22 +23,21 @@
   --heading-weight_h5: 700;
 
   /* Body */
-  --body-size_l: 18;
-  --body-size_m: 16;
-  --body-size_s: 14;
+  --body-size_l: 18px;
+  --body-size_m: 16px;
+  --body-size_s: 14px;
 
   --body-line_l: 28px;
   --body-line_m: 24px;
   --body-line_s: 20px;
 
   /* Description*/
-  --description-size-l: 12;
-  --description-size-m: 11;
-  --description-size-s: 10;
-
-  --description-line-l: 12;
-  --description-line-m: 11;
-  --description-line-s: 10;
+  --description-size-l: 12px;
+  --description-size-m: 11px;
+  --description-size-s: 10px;
+  --description-line-l: 12px;
+  --description-line-m: 11px;
+  --description-line-s: 10px;
 }
 .heading-h1 {
   font-size: var(--heading-size_h1);
